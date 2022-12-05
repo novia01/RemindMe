@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>773509907502-8j0552tfnuc345ha7b07tc8pf6kevdat.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.773509907502-8j0552tfnuc345ha7b07tc8pf6kevdat</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB-mpRLvk-IGbKl4lgANJ65nv1503he_D0</string>
+	<key>GCM_SENDER_ID</key>
+	<string>773509907502</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.example.farmasiYakkum</string>
+	<key>PROJECT_ID</key>
+	<string>farmasi-a5209</string>
+	<key>STORAGE_BUCKET</key>
+	<string>farmasi-a5209.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:773509907502:ios:5f0ffb4913fd8bbe0b4bbf</string>
+</dict>
+</plist>

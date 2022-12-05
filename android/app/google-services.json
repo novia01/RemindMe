@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "986662422702",
+    "project_id": "reminderapp-6cec1",
+    "storage_bucket": "reminderapp-6cec1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:986662422702:android:b7a191bfc8b555a77d053f",
+        "android_client_info": {
+          "package_name": "com.example.farmasi_yakkum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "986662422702-kpk6pnk6pgh2km7qp1e62mrbi8bkhcn1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCVl7Zwm3tD7KQTBZA5vuu-1PXn2d2tycU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "986662422702-kpk6pnk6pgh2km7qp1e62mrbi8bkhcn1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
