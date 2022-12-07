@@ -1,6 +1,5 @@
 import 'dart:convert';
 import 'package:farmasi_yakkum/users/authentication/login.dart';
-import 'package:farmasi_yakkum/users/modal/user.dart';
 import 'package:farmasi_yakkum/api_connection/api_connection.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:flutter/material.dart';
@@ -46,27 +45,33 @@ class _SignUpState extends State<SignUp> {
   }
 
   saveUserRecord() async {
-    User userModel = User (
-      nomorRMController.text.trim(),
-      namaPasienController.text.trim(),
-      emailController.text.trim(),
-      passwordController.text.trim(),
-    );
-
     try {
       var response = await http.post (
         Uri.parse(API.signup),
-        body:  userModel.toJson(),
+        // body:  userModel.toJson(),
+        body : jsonEncode({
+          "nomorRM": nomorRMController.text.trim(),
+          "namaPasien": namaPasienController.text.trim(),
+          "email": emailController.text.trim(),
+          "password": passwordController.text.trim()
+        }),
         headers: {
-          // 'Content-Type': 'application/json',
+          'Content-Type': 'application/json',
           'Charset': 'utf-8'
         },
       );
+
+      // print(response);
+      // print(response.body);
+
       if(response.statusCode == 200) {
         var resBodyOfSignUp = jsonDecode(response.body);
-        if(resBodyOfSignUp ['success'] == true) {
-          Fluttertoast.showToast(msg: "SignUp Successfully!");
 
+        // print(resBodyOfSignUp);
+        // print(resBodyOfSignUp["success"]);
+
+        if(resBodyOfSignUp['success'] == true) {
+          Fluttertoast.showToast(msg: "SignUp Successfully!");
           setState(() {
             nomorRMController.clear();
             namaPasienController.clear();

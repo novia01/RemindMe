@@ -39,13 +39,6 @@ class _ListObatState extends State<ListObat> {
                         subtitle: Text('${obat.aturan}'),
                       ),
                     ),
-                    // child: Column(
-                    //   crossAxisAlignment: CrossAxisAlignment.start,
-                    //   children: <Widget> [
-                    //     Text('${obat.namaObat}'),
-                    //     Text('${obat.aturan}'),
-                    //   ],
-                    // ),
                   );
                 },
               );

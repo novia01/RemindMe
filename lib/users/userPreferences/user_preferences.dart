@@ -4,13 +4,13 @@ import 'package:farmasi_yakkum/users/modal/user.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class RememberUserPrefs {
-  //save anda remember user info
+  //save and remember user info
   static Future<void> saveUser (User userInfo) async {
     SharedPreferences preferences = await SharedPreferences.getInstance();
     String userJsonData = jsonEncode(userInfo.toJson());
     await preferences.setString("currentUser", userJsonData);
   }
-  //get anda read User Info
+  //get and read User Info
   static Future<User?> readUserInfo() async {
     User? currentUserInfo;
     SharedPreferences preferences = await SharedPreferences.getInstance();
@@ -18,7 +18,7 @@ class RememberUserPrefs {
 
     if(userInfo != null) {
       Map <String, dynamic> userDataMap = jsonDecode(userInfo);
-      User.fromJson(userDataMap);
+      currentUserInfo = User.fromJson(userDataMap);
     }
     return currentUserInfo;
   }
