@@ -26,11 +26,6 @@ class _LoginState extends State<Login> {
     try {
       var response = await http.post(
         Uri.parse(API.login),
-        headers: {
-        "Access-Control-Allow-Origin": "*", // Required for CORS support to work
-        "Access-Control-Allow-Headers": "Origin,Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token,locale",
-        "Access-Control-Allow-Methods": "POST, OPTIONS"
-        },
         body: {
           "email" :emailController.text.trim(),
           "password" : passwordController.text.trim(),
@@ -242,7 +237,6 @@ class _LoginState extends State<Login> {
                       ),
                     ),
                   ),
-                  
                 ],
               )
             ),

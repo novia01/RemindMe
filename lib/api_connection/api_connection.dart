@@ -1,5 +1,6 @@
-class API {
-  static const hostConnect = 'http://192.168.10.140/api';
+class API  {
+  static const hostConnect = 'http://192.168.100.201/api';
+  static const hostImage = 'http://192.168.100.201/Admin Farmasi Yakkum';
   static const hostConnectUser = '$hostConnect/user';
   static const hostConnectData = '$hostConnect/data';
 
@@ -14,5 +15,18 @@ class API {
 
   //detail fetch
   static const getDetail = '$hostConnect/data/detail_data.php';
+
+  //Get image
+  // private String image = Images(_judul);
+  static const getImage = '$hostImage/images/';
   
+}
+
+class Images {
+  String _judul;
+  Images(this._judul);
+  
+  get judul { 
+    return this._judul;
+  }
 }

@@ -61,14 +61,14 @@ class _SignUpState extends State<SignUp> {
         },
       );
 
-      // print(response);
-      // print(response.body);
+      print(response);
+      print(response.body);
 
       if(response.statusCode == 200) {
         var resBodyOfSignUp = jsonDecode(response.body);
 
-        // print(resBodyOfSignUp);
-        // print(resBodyOfSignUp["success"]);
+        print(resBodyOfSignUp);
+        print(resBodyOfSignUp["success"]);
 
         if(resBodyOfSignUp['success'] == true) {
           Fluttertoast.showToast(msg: "SignUp Successfully!");

@@ -2,6 +2,7 @@ import 'package:farmasi_yakkum/users/authentication/login.dart';
 import 'package:farmasi_yakkum/users/fragmen/detail_list.dart';
 import 'package:farmasi_yakkum/users/fragmen/list_obat.dart';
 import 'package:farmasi_yakkum/users/userPreferences/current_user.dart';
+import 'package:farmasi_yakkum/users/userPreferences/user_preferences.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -14,34 +15,91 @@ class Dashboard extends StatefulWidget {
 }
 
 class _DashboardState extends State<Dashboard> {
+  
   CurrentUser _rememberCurrentUser = Get.put(CurrentUser());
+  final CurrentUser _currentUser = Get.put(CurrentUser());
   late FirebaseMessaging messaging;
+
+  signOutUser () async {
+    var resultResponse = await Get.dialog(
+      AlertDialog (
+        backgroundColor: Colors.blueGrey,
+        title: const Text(
+          "Logout",
+          style: TextStyle(
+            fontSize: 18,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        content: const Text(
+          "Are you sore? \n You want to logout from app?"
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Get.back();
+            }, 
+            child: const Text(
+              "No",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            ),
+          ),
+          TextButton(
+            onPressed: () {
+              Get.back(result: "LoggedOut");
+            }, 
+            child: const Text(
+              "Yes",
+              style: TextStyle(
+                color: Colors.black,
+              ),
+            )
+          )
+        ],
+      ),
+    );
+    if (resultResponse == "LoggedOut") {
+      RememberUserPrefs.removeUserInfo () 
+      .then((value)
+      {
+        Get.off(Login());
+      });
+    }
+  }
+  
   @override
   void initState()  {
     super.initState();
     FirebaseMessaging _firebaseMessaging = FirebaseMessaging.instance; // Change here
-    _firebaseMessaging.subscribeToTopic("Reminder");
+    _firebaseMessaging.subscribeToTopic("Reminder${_currentUser.user.id_pasien}");
 
-    _firebaseMessaging.getToken().then((token){
-        print("token is $token");
-    });
+    print(_currentUser.user.id_pasien);
 
-  // NOTIF Running on FOREGROUND
+  // Handling Message In Foreground
     FirebaseMessaging.onMessage.listen((RemoteMessage event) {
       print("message recieved");
-      print(event.notification!.body);
       showDialog(
         context: context,
         builder: (BuildContext context) {
           return AlertDialog(
-            title: Text('Reminder!'),
-            content:
-            Image.network(
-            'https://yakkum.or.id/wp-content/uploads/2020/10/73385ead-af8a-4b29-93bf-2940a14a5ef2.png',
-            height: 50,
-            width: 50,
-            fit: BoxFit.cover,
+            title: Text(event.data["title"]),
+            // content: Text(event.notification!.body!),
+            content: SingleChildScrollView(
+              child: ListBody(
+                children: <Widget>[
+                  Text(event.notification!.body!),
+                  Image.network(
+                    event.data["image"],
+                    height: 250,
+                    width: 250,
+                    fit: BoxFit.cover, 
+                  ),
+                ],
+              ),
             ),
+
             actions: [
               TextButton(
                 child: const Text("Tutup"),
@@ -53,7 +111,7 @@ class _DashboardState extends State<Dashboard> {
                 child: const Text("Lihat Detail"),
                 onPressed: () {
                   Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (_) => ListObat())
+                    context, MaterialPageRoute(builder: (_) => DetailObat())
                   );
                 },
               ),
@@ -61,15 +119,14 @@ class _DashboardState extends State<Dashboard> {
           );
         });
     });
-
-      
-      FirebaseMessaging.onMessageOpenedApp.listen((message) {
-        print('Message cliked');
-        Navigator.push(
-          context, MaterialPageRoute(builder: (BuildContext context) => DetailObat())
-        );
-      }
-    );
+    
+  //Handling Message In Background
+    FirebaseMessaging.onMessageOpenedApp.listen((message) {
+      print('Message cliked');
+      Navigator.push(
+        context, MaterialPageRoute(builder: (BuildContext context) => DetailObat())
+      );
+    }); 
   }
   
   Widget build(BuildContext context) {
@@ -207,14 +264,15 @@ class _DashboardState extends State<Dashboard> {
                   width: 340,
                   decoration: BoxDecoration(
                       color: Colors.blue, borderRadius: BorderRadius.circular(20)),
-                  margin: EdgeInsets.only(top: 180),
-                  child: TextButton(
-                    onPressed: () {
-                      Get.to(Login());
+                  margin: EdgeInsets.only(top: 150),
+                  child: InkWell(
+                    onTap: () {
+                      signOutUser();
                     },
                     child: const Text(
                       'Logout',
-                      style: TextStyle(color: Colors.white, fontSize: 20),
+                      textAlign: TextAlign.center,
+                      style: TextStyle(color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ),

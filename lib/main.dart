@@ -7,7 +7,6 @@ import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 
-
 // Notif running on Background
 Future<void> _messageHandler(RemoteMessage message) async {
   await Firebase.initializeApp(

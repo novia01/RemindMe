@@ -1,3 +1,4 @@
+import 'package:farmasi_yakkum/api_connection/api_connection.dart';
 import 'package:farmasi_yakkum/api_connection/getObat_api.dart';
 import 'package:farmasi_yakkum/users/fragmen/dashboard.dart';
 import 'package:farmasi_yakkum/users/modal/obat.dart';
@@ -90,30 +91,47 @@ class _DetailObatState extends State<DetailObat> {
                             subtitle: Text('${obat.deskripsi}'),
                           ),
                         ),
-                        Material(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(30),
-                          child: InkWell(
-                            onTap: () {
-                              Get.to(Dashboard());
-                            },
-                            borderRadius: BorderRadius.circular(20),
-                            child: const Padding (
-                              padding: EdgeInsets.symmetric(
-                                vertical: 10,
-                                horizontal: 28,
-                              ),
-                              child: Text (
-                                "Lihat Gambar Obat",
-                                style: TextStyle (
-                                  color:  Colors.white,
-                                  fontSize: 16,
-                                ),
-                              ),
-                            ),
+                        
+                      //   Material(
+                      //     color: Colors.blue,
+                      //     borderRadius: BorderRadius.circular(30),
+                      //     child: InkWell(
+                      //       borderRadius: BorderRadius.circular(20),
+                      //       child: GestureDetector(
+                      //         onTap: () async {
+                      //           showDialog<AlertDialog>(
+                      //             context: context,
+                      //             builder: (BuildContext context) {
+                      //               return AlertDialog(
+                      //                 actions: <Widget>[
+                      //                   Column(
+                      //                     children: <Widget>[
+                      //                       Text('${obat.namaObat}'), 
+                      //                       Image.network(API.getImage),
+                      //                     ],
+                      //                   )
+                      //                 ],
+                      //               );
+                      //             }
+                      //           );
+                      //         },
+                      //         child: const Padding (
+                      //           padding: EdgeInsets.symmetric(
+                      //             vertical: 10,
+                      //             horizontal: 28,
+                      //           ),
+                      //           child: Text (
+                      //             "Lihat Gambar Obat",
+                      //             style: TextStyle (
+                      //               color:  Colors.white,
+                      //               fontSize: 16,
+                      //             ),
+                      //           ),
+                      //         ),
+                      //       ),
 
-                          ),
-                        ),
+                      //     ),
+                      //   ),
                       ]
                     );
                   },
