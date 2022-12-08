@@ -18,6 +18,7 @@ class Obat {
   String jamMulai;
   String aturanTambahan;
   String deskripsi;
+  String judul;
 
   Obat({
     required this.id_notifikasi,
@@ -32,6 +33,7 @@ class Obat {
     required this.jamMulai,
     required this.aturanTambahan,
     required this.deskripsi,
+    required this.judul,
   });
 
   factory Obat.fromMap(Map <String, dynamic> json) => Obat(
@@ -47,6 +49,7 @@ class Obat {
     jamMulai : json["jamMulai"],
     aturanTambahan : json["aturanTambahan"],
     deskripsi: json["deskripsi"],
+    judul: json["judul"],
   );
   
   Map<String, dynamic> toMap() => {
@@ -60,5 +63,6 @@ class Obat {
     "jamMulai" : jamMulai,
     "aturanTambahan" : aturanTambahan,
     "deskripsi" : deskripsi,
+    "judul" : judul,
   };
 }

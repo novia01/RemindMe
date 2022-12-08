@@ -1,10 +1,6 @@
-import 'package:farmasi_yakkum/api_connection/api_connection.dart';
 import 'package:farmasi_yakkum/api_connection/getObat_api.dart';
-import 'package:farmasi_yakkum/users/fragmen/dashboard.dart';
 import 'package:farmasi_yakkum/users/modal/obat.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-
 
 
 class DetailObat extends StatefulWidget {
@@ -92,46 +88,45 @@ class _DetailObatState extends State<DetailObat> {
                           ),
                         ),
                         
-                      //   Material(
-                      //     color: Colors.blue,
-                      //     borderRadius: BorderRadius.circular(30),
-                      //     child: InkWell(
-                      //       borderRadius: BorderRadius.circular(20),
-                      //       child: GestureDetector(
-                      //         onTap: () async {
-                      //           showDialog<AlertDialog>(
-                      //             context: context,
-                      //             builder: (BuildContext context) {
-                      //               return AlertDialog(
-                      //                 actions: <Widget>[
-                      //                   Column(
-                      //                     children: <Widget>[
-                      //                       Text('${obat.namaObat}'), 
-                      //                       Image.network(API.getImage),
-                      //                     ],
-                      //                   )
-                      //                 ],
-                      //               );
-                      //             }
-                      //           );
-                      //         },
-                      //         child: const Padding (
-                      //           padding: EdgeInsets.symmetric(
-                      //             vertical: 10,
-                      //             horizontal: 28,
-                      //           ),
-                      //           child: Text (
-                      //             "Lihat Gambar Obat",
-                      //             style: TextStyle (
-                      //               color:  Colors.white,
-                      //               fontSize: 16,
-                      //             ),
-                      //           ),
-                      //         ),
-                      //       ),
-
-                      //     ),
-                      //   ),
+                        Material(
+                          color: Colors.blue,
+                          borderRadius: BorderRadius.circular(30),
+                          child: InkWell(
+                            borderRadius: BorderRadius.circular(20),
+                            child: GestureDetector(
+                              onTap: () async {
+                                showDialog<AlertDialog>(
+                                  context: context,
+                                  builder: (BuildContext context) {
+                                    return AlertDialog(
+                                      actions: <Widget>[
+                                        Column(
+                                          children: <Widget>[
+                                            Text('${obat.namaObat}'), 
+                                            Image.network('https://b7fd-182-253-183-105.ap.ngrok.io/Admin_Farmasi_Yakkum/images/${obat.judul}'),
+                                          ],
+                                        )
+                                      ],
+                                    );
+                                  }
+                                );
+                              },
+                              child: const Padding (
+                                padding: EdgeInsets.symmetric(
+                                  vertical: 10,
+                                  horizontal: 28,
+                                ),
+                                child: Text (
+                                  "Lihat Gambar Obat",
+                                  style: TextStyle (
+                                    color:  Colors.white,
+                                    fontSize: 16,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                       ]
                     );
                   },

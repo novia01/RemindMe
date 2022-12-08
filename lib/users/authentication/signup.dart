@@ -92,7 +92,7 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       body: LayoutBuilder (
         builder: (context, cons) {
           return ConstrainedBox (

@@ -9,7 +9,7 @@ Future<List<Obat>> fetchObat() async {
   final CurrentUser _currentUser = Get.put(CurrentUser());
 
   final response = await http.get(Uri.parse("${API.getData}?id_pasien=${_currentUser.user.id_pasien}"));
-  print(response.body);
-  print(_currentUser.user.id_pasien);
+  // print(response.body);
+  // print(_currentUser.user.id_pasien);
   return ObatFromJson (response.body);
 }

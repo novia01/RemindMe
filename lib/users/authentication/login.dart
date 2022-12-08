@@ -57,7 +57,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold (
-      backgroundColor: Colors.blue,
+      backgroundColor: Colors.white,
       body: LayoutBuilder (
         builder: (context, cons) {
           return ConstrainedBox (
