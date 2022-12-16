@@ -136,7 +136,7 @@ class _SignUpState extends State<SignUp> {
                                     decoration:  InputDecoration (
                                       prefixIcon: const Icon (
                                         Icons.numbers,
-                                        color:  Colors.blue,
+                                        color:  Colors.black,
                                       ),
                                       hintText: "Nomor RM ....",
                                       border: OutlineInputBorder ( 
@@ -179,7 +179,7 @@ class _SignUpState extends State<SignUp> {
                                     decoration:  InputDecoration (
                                       prefixIcon: const Icon (
                                         Icons.person,
-                                        color:  Colors.blue,
+                                        color:  Colors.black,
                                       ),
                                       hintText: "Nama ....",
                                       border: OutlineInputBorder ( 
@@ -222,7 +222,7 @@ class _SignUpState extends State<SignUp> {
                                     decoration:  InputDecoration (
                                       prefixIcon: const Icon (
                                         Icons.mail,
-                                        color:  Colors.blue,
+                                        color:  Colors.black,
                                       ),
                                       hintText: "Email ....",
                                       border: OutlineInputBorder ( 
@@ -265,7 +265,7 @@ class _SignUpState extends State<SignUp> {
                                     decoration:  InputDecoration (
                                       prefixIcon: const Icon (
                                         Icons.key,
-                                        color:  Colors.blue,
+                                        color:  Colors.black,
                                       ),
                                       hintText: "Password ....",
                                       border: OutlineInputBorder ( 
