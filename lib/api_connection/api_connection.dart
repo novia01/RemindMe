@@ -1,5 +1,5 @@
 class API  {
-  static const hostConnect = 'https://b7fd-182-253-183-105.ap.ngrok.io/api';
+  static const hostConnect = 'https://a44f-2001-448a-4043-7399-79cf-7447-1acb-2a83.ap.ngrok.io/api';
   static const hostConnectUser = '$hostConnect/user';
   static const hostConnectData = '$hostConnect/data';
 
@@ -13,5 +13,5 @@ class API  {
   static const getData = '$hostConnect/data/get_data.php';
 
   //detail fetch
-  static const getDetail = '$hostConnect/data/detail_data.php';
+  static const getDetail = '$hostConnect/data/details.php';
 }
