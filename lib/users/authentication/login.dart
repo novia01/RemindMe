@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:farmasi_yakkum/users/authentication/signup.dart';
 import 'package:farmasi_yakkum/users/fragmen/dashboard.dart';
 import 'package:farmasi_yakkum/users/modal/user.dart';
@@ -39,9 +38,12 @@ class _LoginState extends State<Login> {
           User userInfo = User.fromJson(resBodyOfLogin["userData"]);
 
           //save userInfo to local storage using shared preferences
+
           await RememberUserPrefs.saveUser(userInfo);
 
-          Future.delayed(Duration(milliseconds: 2000), () {
+          Future.delayed(Duration(milliseconds: 2000), () async  {
+            User? user = await RememberUserPrefs.readUserInfo(); 
+
             Get.to(Dashboard());
           });
 
@@ -101,7 +103,7 @@ class _LoginState extends State<Login> {
                                     decoration:  InputDecoration (
                                       prefixIcon: const Icon (
                                         Icons.mail,
-                                        color:  Colors.blue,
+                                        color:  Colors.black,
                                       ),
                                       hintText: "Email ....",
                                       border: OutlineInputBorder ( 
@@ -144,7 +146,7 @@ class _LoginState extends State<Login> {
                                     decoration:  InputDecoration (
                                       prefixIcon: const Icon (
                                         Icons.key,
-                                        color:  Colors.blue,
+                                        color:  Colors.black,
                                       ),
                                       hintText: "Password ....",
                                       border: OutlineInputBorder ( 

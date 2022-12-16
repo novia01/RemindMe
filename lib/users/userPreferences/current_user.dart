@@ -6,6 +6,12 @@ class CurrentUser extends GetxController{
   Rx<User> _currentUser = User('','','' ,'' , '').obs;
 
   User get user => _currentUser.value;
+  
+  setCurrentUser(User? user) {
+    if (user != null) {
+      _currentUser.value = user;
+    }
+  }
 
   getUserInfo () async {
     User? getUserInfoFromLocalStorage = await RememberUserPrefs.readUserInfo();
