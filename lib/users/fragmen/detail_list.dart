@@ -22,11 +22,11 @@ class _DetailObatState extends State<DetailObat> {
             builder: (context, snapshot) {
               if (snapshot.hasData) {
                 return ListView.builder(
-                  itemCount: snapshot.data?.length,
+                  itemCount:1,
                   scrollDirection: Axis.vertical,
                   shrinkWrap: true,
                   physics: BouncingScrollPhysics(),
-                  itemBuilder: (BuildContext context, index) {
+                  itemBuilder: (context, index) {
                     Obat obat = snapshot.data![index];
                     return Column(
                       children: <Widget>[
@@ -103,7 +103,7 @@ class _DetailObatState extends State<DetailObat> {
                                         Column(
                                           children: <Widget>[
                                             Text('${obat.namaObat}'), 
-                                            Image.network('https://b7fd-182-253-183-105.ap.ngrok.io/Admin_Farmasi_Yakkum/images/${obat.judul}'),
+                                            Image.network('https://604e-2001-448a-404e-10bd-a807-9c2f-5905-a3a7.ap.ngrok.io/Admin_Farmasi_Yakkum/images/${obat.judul}'),
                                           ],
                                         )
                                       ],

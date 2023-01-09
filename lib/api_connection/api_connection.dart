@@ -1,5 +1,5 @@
 class API  {
-  static const hostConnect = 'https://a44f-2001-448a-4043-7399-79cf-7447-1acb-2a83.ap.ngrok.io/api';
+  static const hostConnect = 'https://604e-2001-448a-404e-10bd-a807-9c2f-5905-a3a7.ap.ngrok.io/api';
   static const hostConnectUser = '$hostConnect/user';
   static const hostConnectData = '$hostConnect/data';
 
