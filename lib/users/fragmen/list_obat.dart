@@ -31,7 +31,7 @@ class _ListObatState extends State<ListObat> {
                   return Card(
                     child: TextButton (
                       onPressed: () {
-                        Get.to(DetailObat());
+                        Get.to(DetailObat(obat: obat));
                       },
                       child: ListTile (
                         title: Text('${obat.namaObat}'),
