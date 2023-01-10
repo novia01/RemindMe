@@ -1,5 +1,4 @@
 import 'package:farmasi_yakkum/users/authentication/login.dart';
-import 'package:farmasi_yakkum/users/fragmen/detail_list.dart';
 import 'package:farmasi_yakkum/users/fragmen/list_obat.dart';
 import 'package:farmasi_yakkum/users/modal/user.dart';
 import 'package:farmasi_yakkum/users/userPreferences/current_user.dart';
